@@ -1,27 +1,180 @@
-<html>
-   <head>
-   </head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agencia de Empleo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
 
-  <body>
-  <form name="empleados" class="formulario" action="informacion.php" method="POST">
-    <table class="tabla" border="1">
-      <tr>
-        <td>Identificacion_Empleado</td>
-         <td> <input type="text" name="Identificacion"</td>
-      </tr>
-       <tr>
-         <td>Nombres Apellidos</td>
-         <td> <input type="text" name="NomApellidos"</td>
-       </tr>
-         <tr>
-           <td>Cargo a Desempeñar</td>
-           <td> <input type="text" name="Cargo"</td>
-         </tr>
-           <tr>
-             <td>Salario</td>
-             <td> <input type="submit" values="Enviar Datos" class="boton"></td>
-           </tr>
-    </table>
-  </form>
- </body>
+    header {
+      background: #007bff;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    nav {
+      background: #0056b3;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 15px;
+      background: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .job-listing {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Agencia de Empleo Virtual</h1>
+    <p>Conectamos talentos con oportunidades</p>
+  </header>
+
+  <nav>
+    <a href="#ofertas">Ofertas de Empleo</a>
+    <a href="#postulantes">Postularse</a>
+    <a href="#publicar">Publicar Vacante</a>
+  </nav>
+
+  <main>
+    <section id="ofertas">
+      <h2>Ofertas de Empleo Actuales</h2>
+      <div class="job-listing">
+        <strong>Desarrollador Frontend</strong><br>
+        Empresa: TechSoft | Ubicación: Remoto | Tipo: Tiempo Completo
+        <p>Buscamos desarrollador con experiencia en React, HTML, CSS.</p>
+      </div>
+      <div class="job-listing">
+        <strong>Asistente Administrativo</strong><br>
+        Empresa: AdminPro | Ubicación: Bogotá | Tipo: Medio Tiempo
+        <p>Persona organizada, con manejo de Excel y buena redacción.</p>
+      </div>
+      <!-- Puedes agregar más ofertas manualmente o con JavaScript -->
+    </section>
+
+    <section id="postulantes">
+      <h2>Formulario de Postulación</h2>
+      <form id="postulante-form">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="cv">Resumen de experiencia (CV breve):</label>
+        <textarea id="cv" name="cv" rows="5" required></textarea>
+
+        <label for="puesto">Puesto deseado:</label>
+        <input type="text" id="puesto" name="puesto" required>
+
+        <button type="submit">Enviar Postulación</button>
+      </form>
+    </section>
+
+    <section id="publicar">
+      <h2>Publicar una Vacante (Empresas)</h2>
+      <form id="empresa-form">
+        <label for="empresa">Nombre de la empresa:</label>
+        <input type="text" id="empresa" name="empresa" required>
+
+        <label for="cargo">Cargo ofrecido:</label>
+        <input type="text" id="cargo" name="cargo" required>
+
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" name="ubicacion">
+
+        <label for="descripcion">Descripción del cargo:</label>
+        <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+
+        <button type="submit">Publicar Vacante</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Agencia de Empleo. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    // Simula el envío de formularios (solo en frontend)
+    document.getElementById('postulante-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Gracias por postularte. Pronto te contactaremos.');
+      this.reset();
+    });
+
+    document.getElementById('empresa-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Vacante publicada correctamente.');
+      this.reset();
+    });
+  </script>
+
+</body>
 </html>
